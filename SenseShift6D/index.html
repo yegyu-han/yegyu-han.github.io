@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="SenseShift6D - Yegyu Han, Taegyoon Yoon, Dayeon Woo, Sojeong Kim, Hyung-Sin Kim">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="object pose estimation, 6d pose estimation, RGB-D benchmark, adaptive sensor control, 3d computer vision">
+
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Yegyu Han, Taegyoon Yoon, Dayeon Woo, Sojeong Kim, Hyung-Sin Kim">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Seoul National University">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="SenseShift6D: Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations">
+
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://yegyu-han.github.io/YegyuHan.github.io/SenseShift6D/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SenseShift6D: Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations">
+  <meta name="citation_author" content="Han, Yegyu">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2027">
+  <meta name="citation_conference_title" content="WACV">
+  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2507.05751">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>SenseShift6D: Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">SenseShift6D</h1>
+            <h2 class="subtitle is-3 publication-title">: Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/yegyu-han-982b93360" target="_blank">Yegyu Han</a>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/taegyoun88/" target="_blank">Taegyoon Yoon</a>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/다연-우-657138253/" target="_blank">Dayeon Woo</a>,</span>
+              <span class="author-block">
+                <a href="https://young-pipe-5dd.notion.site/Sojeong-Kim-d80e2cb858584653adbb52b147c80981" target="_blank">Sojeong Kim</a>,</span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/hskiminthebody" target="_blank">Hyung-Sin Kim</a><sup>*</sup>
+              </span>
+              </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">Seoul National University<br><b>WACV 2027</b></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2507.05751.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                  
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/Yegyu/SenseShift6D" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL
+                  <span class="link-block">
+                    <a href="https://github.com/yegyu-han/SenseShift6D_old" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                -->
+                <span class="link-block">
+                  <a href="#"
+                    onclick="alert('To be updated soon.'); return false;"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Recent advances on 6D object pose estimation have achieved high performance on representative benchmarks such as LM-O, YCB-V, and T-Less. These datasets capture natural-occurring variations in illumination and camera setup but do not systematically explore the effects of controllable sensor configurations, such as exposure, gain, and depth-sensor modes. To bridge this gap, we introduce SenseShift6D, the first RGB-D object-pose benchmark that physically sweeps 13 RGB exposures, 9 RGB gains, auto-exposure, 4 depth-capture modes, and 5 illumination levels. For six common household objects, we acquire 198.8k RGB and 20.0k depth images (i.e., 795.4k RGB-D scenes), providing 1,380 unique sensor-lighting permutations per object pose. Experiments with state-of-the-art pretrained, generalizable pose estimators reveal substantial performance variation across lighting and sensor settings, despite their large-scale pretraining. Strikingly, even instance-level estimators-trained and tested on identical objects and backgrounds-exhibit pronounced sensitivity to environmental and sensor shifts. These findings establish sensor- and environment-aware robustness as an underexplored yet essential dimension of 6D pose estimation. To illustrate the opportunity enabled by this benchmark, we evaluate test-time sensor selection without retraining. An idealized controller yields remarkable gains of up to +16.2 pp for generalizable models, whereas a practical consistency-based proxy provides only limited improvements, highlighting substantial headroom and the need for future research on reliable sensor-aware adaptation. SenseShift6D is available at huggingface.co/datasets/Yegyu/SenseShift6D.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Dataset overview -->
+<section class="section" id="dataset-overview">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">SenseShift6D Overview</h2>
+
+    <figure class="image">
+      <img
+        src="static/images/rgb_sample.png"
+        alt="RGB sample images"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+         RGB sample images under auto exposure and under all combinations of exposure and gain settings <br> for brightness 5%, 25%, 75% and 100%.
+      </figcaption>
+    </figure>
+    <figure class="image mt-6">
+      <img
+        src="static/images/depth_sample.png"
+        alt="Depth sample images"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+        Depth sample images under four depth capture modes: Default, High Accuracy, High Density, and Medium Density.
+      </figcaption>
+    </figure>
+    <div class="content mt-6 has-text-justified">
+      <p>
+        <b>SenseShift6D</b> is the first RGB-D benchmark to systematically evaluate the robustness of object pose estimation under variations in illumination and sensor settings. 
+        It physically sweeps 5 illumination levels, 13 RGB exposures, 9 RGB gains, auto-exposure and 4 depth-capture modes, providing 795.4K RGB-D scenes for six household objects.
+        Accurate 6D pose annotations(≈ 2.32 mm) and standardized train/test splits enable controlled evaluation across these conditions.
+      </p>
+    </div>
+
+    <h3 class="title is-4 mt-7">Objects</h3>
+
+    <figure class="image mt-4">
+      <img
+        src="static/images/objects_h.png"
+        alt="SenseShift6D Objects"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+        Six household objects collected in SenseShift6D.
+      </figcaption>
+    </figure>
+
+    <h3 class="title is-4 mt-7">Dataset Splits and Capture Conditions</h3>
+
+    <figure class="image mt-4">
+      <img
+        src="static/images/data_split.png"
+        alt="SenseShift6D configurations for data splits"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+        SenseShift6D configurations for data splits.
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- Experiments -->
+<section class="section" id="experiments">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Experiments</h2>
+
+    <div class="content">
+      <h3 class="title is-4">Analysis on Pretrained, Generalizable Pose Estimation Models</h3>
+    </div>
+    <figure class="image">
+      <img
+        src="static/images/pretrained.jpg"
+        alt="evaluation on pretrained models"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+        AUC@[0:0.1] performance for unseen object pose estimation models: GigaPose, SAM-6D, FoundationPose.
+      </figcaption>
+    </figure>
+
+    <div class="content mt-6 has-text-justified">
+    <p>
+    Pretrained pose estimators exhibit substantial performance drops under illumination and sensor variations, indicating that large-scale pretraining alone does not automatically extend to sensor- and illumination-induced shifts.
+    The contrast between Oracle-D and Oracle-F shows that no single sensor configuration generalizes across diverse scenes. Oracle-D also narrows the average performance gap between the best- and worst-performing objects and reduces performance variability, yielding more stable performance across objects and scenes.
+    </p>
+    </div>
+
+    <div class="content mt-7">
+      <h3 class="title is-4">Analysis on Instance-Level Pose Estimation Models</h3>
+    </div>
+    <figure class="image">
+      <img
+        src="static/images/supervised.png"
+        alt="evaluation on supervised models"
+        loading="lazy"
+      >
+      <figcaption class="has-text-centered">
+        AR@5 performance for instance-level pose estimation models: ZebraPose, GDRNPP, HiPose.
+      </figcaption>
+    </figure>
+
+    <div class="content mt-6 has-text-justified">
+    <p>
+      Instance-level models also degrade under environmental and sensor shifts, even when trained and tested on the same objects.
+      Training on a larger dataset with physically captured variations generally improves robustness, but does not eliminate failures in all cases, underscoring that capturing more reliable observations can be as important as increasing the amount of training data.
+    </p>
+    
+  </div>
+  </div>
+</section>
+
+<section class="section" id="downloads">
+  <div class="container is-max-desktop">
+    <h2 class="title">Dataset Download</h2>
+    <div class="content mt-6 has-text-justified">
+      <p>
+        The SenseShift6D dataset is available for download on
+        <a href="https://huggingface.co/datasets/Yegyu/SenseShift6D"
+           target="_blank"
+           rel="noopener noreferrer">Hugging Face</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Youtube video -->
+ <!--
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video.
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- TODO: Replace with your YouTube video ID
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+<!-- End youtube video -->
+
+
+<!-- Paper poster -->
+<!--
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <!-- TODO: Replace with your poster PDF
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+  -->
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{Han_2027_WACV,
+  title={SenseShift6D: Multimodal RGB-D Benchmarking for Robust 6D Pose Estimation across Environment and Sensor Variations},
+  author={Han, Yegyu and Yoon, Taegyoon and Woo, Dayeon and Kim, Sojeong and Kim, Hyung-Sin},
+  booktitle={Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},
+  year={2027},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
